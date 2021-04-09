@@ -1,21 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { SafeAreaView, Text, StyleSheet, Image} from 'react-native'
+import clarice from './assets/clarice.png'
+import { FontAwesome } from '@expo/vector-icons'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+export default function App(){
+  
+  return(
+    <SafeAreaView style={styles.Principal}>
+      <Text style={styles.Titulo}>
+        <FontAwesome name="comment-o" size={50} />&nbsp; 
+        Fala Clarice!
+        </Text>
+      <Image source={clarice} style={styles.Imagem} />
+    </SafeAreaView>
+  )
 }
 
 const styles = StyleSheet.create({
-  container: {
+  Principal: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: 'column',
+    justifyContent: 'space-around', //distribui uniformemente os elementos na vertical
+    alignItems: 'center'
   },
-});
+  Titulo: {
+    color: '#1a237e',
+    fontSize: 30
+  },
+  Imagem: {
+    height: 400,
+    width: '100%',
+    resizeMode: 'center'
+  }
+})
